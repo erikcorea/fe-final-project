@@ -20,19 +20,19 @@ const Login = ({ setToken, setRefresh }) => {
         event.preventDefault();
         axios({
             method: 'POST',
-            url: `${apiUrl}/users`,
+            url: `${apiUrl}/token/login/`,
             data: {email: loginInfo.email, password: loginInfo.password},
         })
         .then((res) => {
             console.log(res);
-            if(res.data.accessToken) {
-                localStorage.setItem('token', res.data.accessToken);
-				localStorage.setItem('id', res.data.id);
-				setToken(res.data.accessToken);
+            if(res.data.auth_token) {
+                localStorage.setItem('token', res.data.auth_token);
+				setToken(res.data.auth_token);
 				history.push('/home');
 				setRefresh(true);
             }
-        });
+        })
+        .catch(console.error);
     }
     return (
 			<div className='form'>
@@ -44,7 +44,8 @@ const Login = ({ setToken, setRefresh }) => {
 						placeholder='Email'
 						id='email'
 						onChange={handleChange}
-						value={loginInfo.username}
+                        value={loginInfo.email}
+                        name={loginInfo.email}
 					/>
 					<label htmlFor='password'>Password</label>
 					<input
@@ -52,7 +53,8 @@ const Login = ({ setToken, setRefresh }) => {
 						placeholder='Password'
 						id='password'
 						onChange={handleChange}
-						value={loginInfo.password}
+                        value={loginInfo.password}
+                        name={loginInfo.password}
 					/>
 
 					<button type='submit'>Login</button>

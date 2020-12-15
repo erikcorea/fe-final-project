@@ -9,7 +9,7 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 	// const handleShow = () => setShow(true);
 
 	function logout() {
-		localStorage();
+		localStorage.clear();
 		setToken('');
 		history.push('/');
 	}
