@@ -25,7 +25,7 @@ function App() {
 				/>
 				<Route
 					path='/home'
-					render={() => <Home refresh={refresh} setRefresh={setRefresh} />}
+					render={() => <Home refresh={refresh} token={token}setRefresh={setRefresh} />}
 				/>
 				<Route path='/create' component={Create} />
 			</main>

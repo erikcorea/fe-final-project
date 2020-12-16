@@ -22,15 +22,6 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 		setRefresh(true);
 	}
 
-
-	// Axios({
-	// 	method: "POST",
-	// 	url: `${apiUrl}/posts/`,
-	// 	headers: {
-	// 		"Authorization" : `Token ${token}`
-	// 	}
-	// })
-
     return (
 			<div>
 				<nav>
@@ -61,7 +52,7 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 					<i onClick={() => setOpen(!open)} className='fas fa-bars burger'></i>
 				</nav>
 				{show ? <div className="back-drop" onClick={handleClose}></div> : null }
-				<ModalComponent show={show} handleClose={handleClose} setRefresh={setRefresh} />
+				<ModalComponent show={show} handleClose={handleClose} setRefresh={setRefresh} token={token}/>
 			</div>
 		);
 };
