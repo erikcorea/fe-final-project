@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import ModalComponent from './PostModal';
 
 const Navbar = ({ token, setToken, setRefresh }) => {
 	let history = useHistory();
@@ -43,7 +44,7 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 							</button>
 						</li>
 						<li>
-							<button className='nav-btns' onClick={handleShow}>Create Post</button>
+							<button className='nav-btns btn-open' onClick={handleShow}>Create Post</button>
 						</li>
 						{token ? (
 							<li>
@@ -59,6 +60,8 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 					</ul>
 					<i onClick={() => setOpen(!open)} className='fas fa-bars burger'></i>
 				</nav>
+				{show ? <div className="back-drop" onClick={handleClose}></div> : null }
+				<ModalComponent show={show} handleClose={handleClose} setRefresh={setRefresh} />
 			</div>
 		);
 };
