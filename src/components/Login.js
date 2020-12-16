@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import { apiUrl } from '../config';
 
@@ -35,30 +35,39 @@ const Login = ({ setToken, setRefresh }) => {
         .catch(console.error);
     }
     return (
-			<div className='form'>
-				<h1>Welcome</h1>
-				<form onSubmit={handleSubmit}>
-					<label htmlFor='email'>Email</label>
+			<div className='form-div'>
+				<h1 id="login-message">Welcome to Code Connections</h1>
+				<h3>Get Started Today</h3>
+				<form id="login-form" onSubmit={handleSubmit}>
+					<label className="login-label" htmlFor='email'>Email</label>
 					<input
+						className='login-input'
 						type='email'
 						placeholder='Email'
 						id='email'
 						onChange={handleChange}
-                        value={loginInfo.email}
-                        name={loginInfo.email}
+						value={loginInfo.email}
+						name={loginInfo.email}
 					/>
-					<label htmlFor='password'>Password</label>
+					<label className="login-label" htmlFor='password'>Password</label>
 					<input
+						className='login-input'
 						type='password'
 						placeholder='Password'
 						id='password'
 						onChange={handleChange}
-                        value={loginInfo.password}
-                        name={loginInfo.password}
+						value={loginInfo.password}
+						name={loginInfo.password}
 					/>
 
-					<button type='submit'>Login</button>
-					<button type='button' onClick={handleCancel} className='cancel'>
+					<button className='login-btns' type='submit'>
+						Login
+					</button>
+					<button
+						type='button'
+						onClick={handleCancel}
+						className='login-btns'
+						id='cancel'>
 						Cancel
 					</button>
 
@@ -71,34 +80,9 @@ const Login = ({ setToken, setRefresh }) => {
 					</p>
 				</form>
 				<h4>Don't Have An Account?</h4>
+				<Link to='/create'>Create Account</Link>
 			</div>
 		);
 };
 
 export default Login;
-
-
-
-// import React from 'react';
-
-// const Login = () => {
-// 	return (
-// 		<div className='form'>
-// 			<h1>Welcome</h1>
-// 			<form>
-// 				<label htmlFor='email'>Email</label>
-// 				<input type='email' placeholder='Email' id='email' />
-// 				<label htmlFor='password'>Password</label>
-// 				<input type='password' placeholder='Password' id='password' />
-
-// 				<button type='submit'>Login</button>
-// 				<button type='button' className='cancel'>
-// 					Cancel
-// 				</button>
-// 			</form>
-// 			<h4>Don't Have An Account?</h4>
-// 		</div>
-// 	);
-// };
-
-// export default Login;

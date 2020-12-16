@@ -1,12 +1,14 @@
+import Axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 const Navbar = ({ token, setToken, setRefresh }) => {
 	let history = useHistory();
 	const [open, setOpen] = useState(false);
-	// const [show, setShow] = useState(false);
-	// const handleClose = () => setShow(false);
-	// const handleShow = () => setShow(true);
+
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 
 	function logout() {
 		localStorage.clear();
@@ -19,23 +21,39 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 		setRefresh(true);
 	}
 
+
+	// Axios({
+	// 	method: "POST",
+	// 	url: `${apiUrl}/posts/`,
+	// 	headers: {
+	// 		"Authorization" : `Token ${token}`
+	// 	}
+	// })
+
     return (
 			<div>
 				<nav>
-					<div className='logo'>React Nav</div>
+					<div className='logo'>Code Connections</div>
 					<ul
 						className='nav-links'
 						style={{ transform: open ? 'translateX(0px)' : '' }}>
 						<li>
-							<button onClick={home}>Home</button>
+							<button className='nav-btns' onClick={home}>
+								Home
+							</button>
+						</li>
+						<li>
+							<button className='nav-btns' onClick={handleShow}>Create Post</button>
 						</li>
 						{token ? (
 							<li>
-								<button onClick={logout}>Logout</button>
+								<button className='nav-btns' onClick={logout}>
+									Logout
+								</button>
 							</li>
 						) : (
 							<li>
-								<Link to='/'>Login</Link>
+								<Link to='/' className="nav-btns">Login</Link>
 							</li>
 						)}
 					</ul>
