@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { apiUrl } from '../config';
-import '../App.css';
 
 const PostModal = ({show, handleClose, setRefresh, token}) => {
     const [newPost, setNewPost] = useState({

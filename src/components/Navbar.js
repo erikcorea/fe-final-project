@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import ModalComponent from './PostModal';
@@ -23,8 +22,8 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 	}
 
     return (
-			<div>
-				<nav>
+			<div className="nav-div">
+				<nav className="nav-main">
 					<div className='logo'>Code Connections</div>
 					<ul
 						className='nav-links'

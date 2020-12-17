@@ -35,9 +35,10 @@ const Login = ({ setToken, setRefresh }) => {
         .catch(console.error);
     }
     return (
+		<div id="login-main-div">
+			<h1 className="login-message">Code Connections</h1>
+			<h3 className="login-message">Get Started Today</h3>
 			<div className='form-div'>
-				<h1 id="login-message">Welcome to Code Connections</h1>
-				<h3>Get Started Today</h3>
 				<form id="login-form" onSubmit={handleSubmit}>
 					<label className="login-label" htmlFor='email'>Email</label>
 					<input
@@ -82,7 +83,8 @@ const Login = ({ setToken, setRefresh }) => {
 				<h4>Don't Have An Account?</h4>
 				<Link to='/create'>Create Account</Link>
 			</div>
-		);
+		</div>
+	);
 };
 
 export default Login;

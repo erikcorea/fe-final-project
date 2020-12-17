@@ -13,7 +13,7 @@ a {
 	text-decoration: none;
 }
 
-nav {
+.nav-main {
 	display: flex;
 	justify-content: space-around;
 	min-height: 10vh;
@@ -98,7 +98,7 @@ nav .burger {
   }
   
 }
-/* <-------------------------nav bar-----------------------------> */
+/*<-------------------------nav bar-----------------------------> */
 
 /* <-------------------------login-------------------------------> */
 .login-input, .login-btns {
@@ -189,9 +189,18 @@ nav .burger {
 	display: flex;
 	margin: 1rem 0;
 }
-h4, h3 {
-  color: black;
+
+.login-message {
+	width: 100%;
+	margin: auto;
+	max-width: 400px;
+	text-align: center;
 }
+
+h1 {
+	color: red;
+}
+
 /* <-------------------------login-------------------------------> */
 
 /* <-------------------------Modal-------------------------------> */
@@ -257,5 +266,11 @@ h4, h3 {
 	transition: all 1.5s;
 	width: 100%;
 
-}
+} 
 /* <-------------------------Modal-------------------------------> */
+
+/* <-------------------------Posts-------------------------------> */
+.main-post-wrapper {
+	border: 2px solid black;
+}
+/* <-------------------------Posts-------------------------------> */

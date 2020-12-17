@@ -21,7 +21,7 @@ const Home = ({ refresh, setRefresh, token }) => {
         }
     }, [refresh]);
     return (
-        <div>
+        <div className="post-map-div">
             {post.map((post) => {
                 return (
                     <Post 
