@@ -28,52 +28,69 @@ const CreateAccount = () => {
         history.push('/');
     }
     return (
-			<div>
-				<form onSubmit={handleSubmit}>
-					<input
-						type='text'
-						required
-						id='first_name'
-						placeholder='First Name'
-						onChange={handleChange}
-					/>
-					<input
-						type='text'
-						required
-						id='last_name'
-						placeholder='Last Name'
-						onChange={handleChange}
-					/>
-					<input
-						type='text'
-						required
-						id='username'
-						placeholder='Username'
-						onChange={handleChange}
-					/>
-					<input
-						type='email'
-						required
-						id='email'
-						placeholder='Email'
-						onChange={handleChange}
-					/>
-					<input
-						type='password'
-						required
-						id='password'
-						placeholder='password'
-						onChange={handleChange}
-					/>
-					<input
-						type='password'
-						required
-						id='re_password'
-						placeholder='Retype Password'
-						onChange={handleChange}
-					/>
-					<button type='submit'>Create Account</button>
-				</form>
+			<div className='login-main-div'>
+				<div className="form-div">
+					<div className="login-messages">
+						<h1>CODE CONNECTIONS</h1>
+					</div>
+					<form className='login-form' onSubmit={handleSubmit}>
+						<label className="create-acc-label" htmlFor="text">First Name</label>
+						<input
+							className='login-input'
+							type='text'
+							required
+							id='first_name'
+							placeholder='First Name'
+							onChange={handleChange}
+						/>
+						<label className="create-acc-label" htmlFor="text">Last Name</label>
+						<input
+							className='login-input'
+							type='text'
+							required
+							id='last_name'
+							placeholder='Last Name'
+							onChange={handleChange}
+						/>
+						<label className="create-acc-label" htmlFor="text">Username</label>
+						<input
+							className='login-input'
+							type='text'
+							required
+							id='username'
+							placeholder='Username'
+							onChange={handleChange}
+						/>
+						<label className="create-acc-label" htmlFor="email">Email</label>
+						<input
+							className='login-input'
+							type='email'
+							required
+							id='email'
+							placeholder='Email'
+							onChange={handleChange}
+						/>
+						<label className="create-acc-label" htmlFor="password">Password</label>
+						<input
+							className='login-input'
+							type='password'
+							required
+							id='password'
+							placeholder='password'
+							onChange={handleChange}
+						/>
+						<label className="create-acc-label" htmlFor="password">Retype Password</label>
+						<input
+							className='login-input'
+							type='password'
+							required
+							id='re_password'
+							placeholder='Retype Password'
+							onChange={handleChange}
+						/>
+						<button className="login-btns" type='submit'>Create Account</button>
+					</form>
+				</div>
 			</div>
 		);
 };

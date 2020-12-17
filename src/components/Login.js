@@ -35,56 +35,62 @@ const Login = ({ setToken, setRefresh }) => {
         .catch(console.error);
     }
     return (
-		<div id="login-main-div">
-			<h1 className="login-message">Code Connections</h1>
-			<h3 className="login-message">Get Started Today</h3>
-			<div className='form-div'>
-				<form id="login-form" onSubmit={handleSubmit}>
-					<label className="login-label" htmlFor='email'>Email</label>
-					<input
-						className='login-input'
-						type='email'
-						placeholder='Email'
-						id='email'
-						onChange={handleChange}
-						value={loginInfo.email}
-						name={loginInfo.email}
-					/>
-					<label className="login-label" htmlFor='password'>Password</label>
-					<input
-						className='login-input'
-						type='password'
-						placeholder='Password'
-						id='password'
-						onChange={handleChange}
-						value={loginInfo.password}
-						name={loginInfo.password}
-					/>
+			<div className='login-main-div'>
+				<div className='form-div'>
+					<div className="login-messages">
+						<h1>CODE CONNECTIONS</h1>
+						<h3>Get Started Today</h3>
+					</div>
+					<form className='login-form' onSubmit={handleSubmit}>
+						<label id='login-label-email' htmlFor='email'>
+							Email
+						</label>
+						<input
+							className='login-input'
+							type='email'
+							placeholder='Email'
+							id='email'
+							onChange={handleChange}
+							value={loginInfo.email}
+							name={loginInfo.email}
+						/>
+						<label id='login-label-password' htmlFor='password'>
+							Password
+						</label>
+						<input
+							className='login-input'
+							type='password'
+							placeholder='Password'
+							id='password'
+							onChange={handleChange}
+							value={loginInfo.password}
+							name={loginInfo.password}
+						/>
 
-					<button className='login-btns' type='submit'>
-						Login
-					</button>
-					<button
-						type='button'
-						onClick={handleCancel}
-						className='login-btns'
-						id='cancel'>
-						Cancel
-					</button>
+						<button className='login-btns' type='submit'>
+							Login
+						</button>
+						<button
+							type='button'
+							onClick={handleCancel}
+							className='login-btns'
+							id='cancel'>
+							Cancel
+						</button>
 
-					<p
-						style={
-							loginInfo.attempted ? { display: 'block' } : { display: 'none' }
-						}
-						className={loginInfo.valid ? 'valid' : 'invalid'}>
-						Passwords must match.
-					</p>
-				</form>
-				<h4>Don't Have An Account?</h4>
-				<Link to='/create'>Create Account</Link>
+						<p
+							style={
+								loginInfo.attempted ? { display: 'block' } : { display: 'none' }
+							}
+							className={loginInfo.valid ? 'valid' : 'invalid'}>
+							Passwords must match.
+						</p>
+					</form>
+					<h4>Don't Have An Account?</h4>
+					<Link to='/create'>Create Account</Link>
+				</div>
 			</div>
-		</div>
-	);
+		);
 };
 
 export default Login;

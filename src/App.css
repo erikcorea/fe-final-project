@@ -1,3 +1,6 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,6 +8,10 @@
 }
 
 /* <-------------------------nav bar-----------------------------> */
+body {
+	background-color: #F2EBDE;
+}
+
 li {
 	list-style-type: none;
 }
@@ -38,169 +45,155 @@ nav .nav-links {
 nav .nav-links a {
 	font-size: 18px;
 	font-weight: normal;
-  cursor: pointer;
+	cursor: pointer;
 }
 
-nav .nav-btns{
-  font-size: 18px;
-  font-weight: normal;
-  cursor: pointer;
-  border: none;
-  background: none;
-  color: #fff;
+nav .nav-btns {
+	font-size: 18px;
+	font-weight: normal;
+	cursor: pointer;
+	border: none;
+	background: none;
+	color: #fff;
 }
-
-
 
 nav .nav-links a:hover {
 	border-bottom: 1px solid #fff;
 }
 
 nav .nav-btns:hover {
-  border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 
 nav .burger {
-  font-size: 28px;
-  display: none;
-  cursor: pointer;
+	font-size: 28px;
+	display: none;
+	cursor: pointer;
 }
 
 @media all and (max-width: 900px) {
 	nav .burger {
-  display: block;
-  }
+		display: block;
+	}
 
-  nav .nav-links {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background-color: #262626;
-    padding: 40px;
-    width: 40%;
-    transform: translateX(-500px);
-    transition: 0.4s ease-in-out;
-  }
+	nav .nav-links {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		background-color: #262626;
+		padding: 40px;
+		width: 40%;
+		transform: translateX(-500px);
+		transition: 0.4s ease-in-out;
+	}
 
-  nav .nav-links li {
-    padding: 25px;
-    border-bottom: 1px solid #ccc
-  }
+	nav .nav-links li {
+		padding: 25px;
+		border-bottom: 1px solid #ccc;
+	}
 
-  nav .nav-links li:last-of-type {
-  border-bottom: 0px solid #ccc;
-  }
+	nav .nav-links li:last-of-type {
+		border-bottom: 0px solid #ccc;
+	}
 
-  nav .nav-links a:hover {
-	border-bottom: 0px solid #fff;
-  }
-  
+	nav .nav-links a:hover {
+		border-bottom: 0px solid #fff;
+	}
 }
 /*<-------------------------nav bar-----------------------------> */
 
 /* <-------------------------login-------------------------------> */
-.login-input, .login-btns {
+.login-main-div {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.login-input,
+.login-btns {
 	border: none;
 	font-size: 1rem;
 }
 
 .login-btns {
-	background-color: blue;
+	background-image: linear-gradient(
+		to right,
+		#84fab0 0%,
+		#8fd3f4 51%,
+		#84fab0 100%
+	);
 	color: #ffffff;
 	padding: 0.75rem 1rem;
 	transition: box-shadow 0.3s ease-in, background-color 0.3s ease-in;
-	border-radius: 8px;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+	/* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+	border-radius: 10px;
+}
+
+.login-btns:hover {
+	background-position: right center;
+	cursor: pointer;
 }
 
 .login-btns + .login-btns {
 	margin-left: 0.25rem;
 }
 
-.login-btns:focus {
-	box-shadow: 0 0 5px#1e90ff;
-	outline: none;
-}
 
 .login-btns:hover {
 	background-color: orange;
 }
 
-#login-form {
-	background-color: white;
-	color: #222222;
+.login-form {
+	background-color: #F2EBDE;
+	color: #262626;
 	padding: 1.5rem 2rem;
 	text-align: left;
 }
 
-#login-message {
-	color: orange;
-	font-weight: lighter;
-	margin: 0;
-	padding: 4rem 8rem 1rem;
-	text-align: left;
-}
-
 .login-input {
-	border-bottom: 1px solid orange;
+	border: 1px solid #262626;
 	display: block;
 	margin: 1.5rem 0 0.5rem;
 	padding: 0.5rem 0;
 	transition: border 0.3s ease-in;
+	border-radius: 3px;
 }
-
-.login-input:focus {
-	border-color: orange;
-	outline: none;
-}
-
 
 .login-input[type='email'],
-.login-input[type='password'] {
+.login-input[type='password'],
+.login-input[type='text'] {
 	width: 100%;
-}
-
-.cancel {
-	background-color: orange;
-}
-
-.cancel:focus {
-	box-shadow: 0 0 5px #5f5f5f;
-	outline: none;
-}
-
-.cancel:hover {
-	background-color: orange;
+	margin-bottom: .7rem;
 }
 
 .form-div {
-	color: #ffffff;
+	color: #262626;
 	width: 100%;
 	margin: auto;
-	max-width: 400px;
+	max-width: 550px;
+	text-align: center;
+	margin-top: 20vh;
+}
+
+.login-messages {
+	width: 100%;
+	font-size: 1.5rem;
+	margin: auto;
+	max-width: 1500px;
 	text-align: center;
 }
 
-.invalid,
-.valid {
-	align-items: center;
-	background-color: #ffffff;
-	display: flex;
-	margin: 1rem 0;
+.login-messages h1{
+	color: #8fd3f4;
+	text-shadow:
+	-1px -1px 0 #262626,
+	1px -1px 0 #262626,
+	-1px 1px 0 #262626,
+	1px 1px 0 #262626;
 }
-
-.login-message {
-	width: 100%;
-	margin: auto;
-	max-width: 400px;
-	text-align: center;
-}
-
-h1 {
-	color: red;
-}
-
 /* <-------------------------login-------------------------------> */
 
 /* <-------------------------Modal-------------------------------> */
@@ -209,7 +202,7 @@ h1 {
 	width: 80%;
 	max-width: 800px;
 	margin: 4rem auto;
-	transition: all .6s;
+	transition: all 0.6s;
 }
 
 .modal-header {
@@ -260,13 +253,12 @@ h1 {
 }
 
 .back-drop {
-	background: rgba(63, 61, 61, .0692);
+	background: rgba(63, 61, 61, 0.0692);
 	height: 100%;
 	position: fixed;
 	transition: all 1.5s;
 	width: 100%;
-
-} 
+}
 /* <-------------------------Modal-------------------------------> */
 
 /* <-------------------------Posts-------------------------------> */
