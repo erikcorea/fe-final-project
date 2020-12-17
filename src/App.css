@@ -7,11 +7,11 @@
 	box-sizing: border-box;
 }
 
-/* <-------------------------nav bar-----------------------------> */
 body {
 	background-color: #F2EBDE;
 }
 
+/* <-------------------------nav bar-----------------------------> */
 li {
 	list-style-type: none;
 }
@@ -232,7 +232,7 @@ nav .burger {
 	color: coral;
 }
 
-.modal-body p {
+.modal-body textarea {
 	font-size: 1rem;
 	background: #eee;
 	color: #333;
@@ -262,7 +262,10 @@ nav .burger {
 /* <-------------------------Modal-------------------------------> */
 
 /* <-------------------------Posts-------------------------------> */
-.main-post-wrapper {
+.post-boarder {
 	border: 2px solid black;
+	color: #262626;
+	border-radius: 10px;
+	height: 100%;
 }
 /* <-------------------------Posts-------------------------------> */

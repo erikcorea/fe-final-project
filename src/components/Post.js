@@ -24,7 +24,7 @@ const Post = ({title, description, setRefresh, author, postId, token}) => {
     }
 
     return (
-        <div className="main-post-wrapper">
+        <div>
            <div className="post-boarder">
                <div className="post-author">
                    <h3>{author}</h3>

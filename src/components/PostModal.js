@@ -56,7 +56,7 @@ const PostModal = ({show, handleClose, setRefresh, token}) => {
 							<textarea
 								id='description'
 								form='create'
-								row='100'
+								col='50'
 								value={newPost.description}
 								onChange={handleChange}
 								name='description'
