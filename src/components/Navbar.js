@@ -47,6 +47,11 @@ const Navbar = ({ token, setToken, setRefresh }) => {
 								<Link to='/' className="nav-btns">Login</Link>
 							</li>
 						)}
+						<li>
+							<button className="nav-btns">
+								Profile
+							</button>
+						</li>
 					</ul>
 					<i onClick={() => setOpen(!open)} className='fas fa-bars burger'></i>
 				</nav>

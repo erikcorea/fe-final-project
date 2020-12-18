@@ -5,7 +5,8 @@ import { apiUrl } from '../config';
 const PostModal = ({show, handleClose, setRefresh, token}) => {
     const [newPost, setNewPost] = useState({
         title: "",
-        description: ""
+		description: "",
+		needed_skills: "",
     });
 
     function handleChange(event) {
@@ -34,37 +35,49 @@ const PostModal = ({show, handleClose, setRefresh, token}) => {
 				className='modal-wrapper'
 				style={{
 					transform: show ? 'translateY(0vh)' : 'translateY(-100vh)',
-					opacity: show ? '1' : '0',
+					display: show ? 'block' : 'none',
+					// opacity: show ? '1' : '0',
 				}}>
 				<div className='modal-header'>
-					<p>welcome</p>
+					<p>CODE CONNECTIONS</p>
 					<span className='close-modal-btn' onClick={handleClose}>
 						X
 					</span>
 				</div>
 				<div className='modal-content'>
 					<form id='create' onSubmit={createPost}>
-						<div className='modal-body'>
-							<h4>Title</h4>
+						<div>
 							<input
 								type='text'
 								id='title'
 								name='title'
 								value={newPost.title}
 								onChange={handleChange}
+								placeholder="Title"
 							/>
+						</div>
+						<div>
 							<textarea
+								className="modal-textarea"
 								id='description'
 								form='create'
-								col='50'
-								value={newPost.description}
 								onChange={handleChange}
+								value={newPost.description}
 								name='description'
-								placeholder='Enter Text Here...'></textarea>
+								placeholder='Enter Text Here...'>
+							</textarea>
 						</div>
-						<div className='modal-footer'>
-							<button>Create Post</button>
+						<div>
+							<input
+								type='text'
+								id='needed_skills'
+								name='needed_skills'
+								value={newPost.needed_skills}
+								onChange={handleChange}
+								placeholder="Needed Skills"
+							/>
 						</div>
+							<button className="modal-content-btn">Create Post</button>
 					</form>
 				</div>
 			</div>

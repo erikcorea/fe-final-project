@@ -32,6 +32,7 @@ const Home = ({ refresh, setRefresh, token }) => {
                         author={post.author}
                         setRefresh={setRefresh}
                         token={token}
+                        skill={post.needed_skills}
                     />
                 );
             })}
