@@ -1,38 +1,323 @@
-.App {
-  text-align: center;
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background: #f5f4ef;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* <-------------------------nav bar-----------------------------> */
+li {
+	list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+	text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-main {
+	display: flex;
+	justify-content: space-around;
+	min-height: 10vh;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #191919;
+	color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav .logo {
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: uppercase;
 }
+
+nav .nav-links {
+	display: flex;
+	justify-content: space-around;
+	width: 35%;
+}
+
+nav .nav-links a {
+	font-size: 18px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+nav .nav-btns {
+	font-size: 18px;
+	font-weight: normal;
+	cursor: pointer;
+	border: none;
+	background: none;
+	color: #fff;
+}
+
+nav .nav-links a:hover {
+	border-bottom: 1px solid #fff;
+}
+
+nav .nav-btns:hover {
+	border-bottom: 1px solid #fff;
+}
+
+nav .burger {
+	font-size: 28px;
+	display: none;
+	cursor: pointer;
+}
+
+@media all and (max-width: 900px) {
+	nav .burger {
+		display: block;
+	}
+
+	nav .nav-links {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		background-color: #262626;
+		padding: 40px;
+		width: 40%;
+		transform: translateX(-500px);
+		transition: 0.4s ease-in-out;
+	}
+
+	nav .nav-links li {
+		padding: 25px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	nav .nav-links li:last-of-type {
+		border-bottom: 0px solid #ccc;
+	}
+
+	nav .nav-links a:hover {
+		border-bottom: 0px solid #fff;
+	}
+}
+/*<-------------------------nav bar-----------------------------> */
+
+/* <-------------------------login-------------------------------> */
+.login-main-div {
+	font-family: 'Viga', sans-serif;
+}
+
+.login-input,
+.login-btns {
+	border: none;
+	font-size: 1rem;
+}
+
+.login-btns {
+	background-image: linear-gradient(
+		to right,
+		#84fab0 0%,
+		#8fd3f4 51%,
+		#84fab0 100%
+	);
+	color: #ffffff;
+	padding: 0.75rem 1rem;
+	transition: box-shadow 0.3s ease-in, background-color 0.3s ease-in;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+	/* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+	border-radius: 10px;
+}
+
+.login-btns:hover {
+	background-position: right center;
+	cursor: pointer;
+}
+
+.login-btns + .login-btns {
+	margin-left: 0.25rem;
+}
+
+.login-btns:hover {
+	background-color: orange;
+}
+
+.login-form {
+	background-color: #f5f4ef;
+	color: #262626;
+	padding: 1.5rem 2rem;
+	text-align: left;
+}
+
+.login-input {
+	border: 1px solid #262626;
+	display: block;
+	margin: 1.5rem 0 0.5rem;
+	padding: 0.5rem 0;
+	transition: border 0.3s ease-in;
+	border-radius: 3px;
+}
+
+.login-input[type='email'],
+.login-input[type='password'],
+.login-input[type='text'] {
+	width: 100%;
+	margin-bottom: 0.7rem;
+}
+
+.form-div {
+	color: #262626;
+	width: 100%;
+	margin: auto;
+	max-width: 550px;
+	text-align: center;
+	margin-top: 20vh;
+}
+
+.login-messages {
+	width: 100%;
+	font-size: 1.5rem;
+	margin: auto;
+	max-width: 1500px;
+	text-align: center;
+}
+
+.login-messages h1 {
+	color: #8fd3f4;
+	text-shadow: -1px -1px 0 #262626, 1px -1px 0 #262626, -1px 1px 0 #262626,
+		1px 1px 0 #262626;
+}
+/* <-------------------------login-------------------------------> */
+
+/* <-------------------------Modal-------------------------------> */
+.modal-wrapper {
+	background: #fff;
+	width: 80%;
+	max-width: 800px;
+	margin: 4rem auto;
+	transition: all 0.6s;
+	font-family: 'Viga', sans-serif;
+}
+
+.modal-header {
+	background: #2c2c2c;
+	color: #e9e9e9;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.modal-header span {
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+
+.modal-content-btn {
+	display: block;
+	font-size: 1rem;
+	margin-left: auto;
+	padding: 0.5rem 1.8rem;
+	background-image: linear-gradient(
+	to right,
+	#84fab0 0%,
+	#8fd3f4 51%,
+	#84fab0 100%
+	);
+	color: #fff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.back-drop {
+	background: rgba(63, 61, 61, 0.0692);
+	height: 100%;
+	position: fixed;
+	transition: all 1.5s;
+	width: 100%;
+}
+
+.modal-textarea {
+	resize: none;
+	width: 70%;
+	height: 90px;
+}
+
+input[type="text"] {
+	width: 70%;
+}
+/* <-------------------------Modal-------------------------------> */
+
+/* <-------------------------Posts-------------------------------> */
+.post-boarder {
+	border: 2px solid black;
+	color: #262626;
+	margin-left: 20%;
+	width: 60%;
+	height: 12rem;
+	margin-top: 3%;
+	background-color: white;
+	border-radius: 0.9rem;
+	font-family: 'Viga', sans-serif;
+}
+
+.post-author {
+	display: flex;
+}
+
+.post-crud-btn {
+	background-image: linear-gradient(
+		to right,
+		#84fab0 0%,
+		#8fd3f4 51%,
+		#84fab0 100%
+	);
+	color: #f5f4ef;
+	padding: 0.75rem 1rem;
+	transition: box-shadow 0.3s ease-in, background-color 0.3s ease-in;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;
+	border-radius: 10px;
+	border: none;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+
+
+.post-footer {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 2.5rem;
+}
+
+.post-author {
+	margin-left: 0.5rem;
+	margin-top: 0.3rem;
+}
+
+.post-body {
+	margin-left: 0.5rem;
+	margin-top: 0.4rem;
+}
+
+.post-span {
+	color: #84fab0;
+}
+
+.post-span-top {
+	color: #8fd3f4;
+}
+
+.post-footer i {
+	font-size: 25px;
+	margin-right: 0.5rem;
+}
+
+/* <-------------------------Posts-------------------------------> */
